@@ -3,12 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Charts</title>
+  <title>Interactive ATT/IDFA Data Science Visualizations</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f0f0f0; }
+    canvas { max-width: 600px; max-height: 400px; }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Interactive Charts</h1>
-  <ul>
-    <li><a href="ATTenablement_Interactivecharts.html">Chart 1</a></li>
-  </ul>
+  <canvas id="attChart"></canvas>
+  <script>
+    const ctx = document.getElementById('attChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Social Media', 'Gaming', 'Utilities', 'E-Commerce'],
+        datasets: [{
+          label: 'ATT Consent Rate (%)',
+          data: [65, 45, 80, 55],
+          backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0'],
+          borderColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: {
+            enabled: true,
+            callbacks: {
+              label: function(context) {
+                return `${context.dataset.label}: ${context.raw}%`;
+              }
+            }
+          },
+          title: {
+            display: true,
+            text: 'ATT/IDFA Consent Rates by App Category'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'Consent Rate (%)' }
+          },
+          x: {
+            title: { display: true, text: 'App Category' }
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
