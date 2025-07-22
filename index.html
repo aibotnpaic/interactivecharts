@@ -1,14 +1,14 @@
 
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive ATT/IDFA Data Science Visualizations</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interactive ATT/IDFA Data Science Visualizations</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+<style>
     body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
     .chart-container { width: 45%; margin: 20px; display: inline-block; background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
     h2 { text-align: center; color: #333; }
@@ -16,21 +16,20 @@
   </style>
 </head>
 <body>
-  <h2>Interactive ATT/IDFA Data Science Visualizations</h2>
-  <div class="chart-container">
-    <canvas id="predictiveChart"></canvas>
-  </div>
-  <div class="chart-container">
-    <canvas id="measurementChart"></canvas>
-  </div>
-  <div class="chart-container">
-    <canvas id="mlChart"></canvas>
-  </div>
-  <div class="chart-container">
-    <canvas id="mcpChart"></canvas>
-  </div>
-
-  <script>
+<h2>Interactive ATT/IDFA Data Science Visualizations</h2>
+<div class="chart-container" style="display: block; width: 100%; height: auto; margin-bottom: 20px;">
+<canvas id="predictiveChart"></canvas>
+</div>
+<div class="chart-container" style="display: block; width: 100%; height: auto; margin-bottom: 20px;">
+<canvas id="measurementChart"></canvas>
+</div>
+<div class="chart-container" style="display: block; width: 100%; height: auto; margin-bottom: 20px;">
+<canvas id="mlChart"></canvas>
+</div>
+<div class="chart-container" style="display: block; width: 100%; height: auto; margin-bottom: 20px;">
+<canvas id="mcpChart"></canvas>
+</div>
+<script>
     // Register zoom plugin
     Chart.register(ChartZoom);
 
@@ -199,4 +198,3 @@
   </script>
 </body>
 </html>
-
